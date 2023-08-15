@@ -1,0 +1,75 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# whisper
+
+Simulate and visualise allele trajectories, using Wright-Fisher simulation.
+
+## Installation
+
+You can install the development version of whisper from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("emilmalta/whisper")
+```
+
+Load the contents into R environment using
+
+```{r}
+library(whisper)
+```
+
+
+## wf_sim()
+
+The `wf_sim` function produves a vector of allele frequencies using WF simulation. By default, population size is `250`, initial allele frequency is `0.5`, and `100` generations are produced.
+
+```{r example}
+wf_sim()
+```
+
+No mutation rates or selection by default. Mutation can be simulated like so:
+
+```{r}
+wf_sim(p = 1/250, mut_to = .8, mut_from = .1)
+```
+Selection assumes a diploid organism, and genotype fitness is provided for each:
+
+```{r}
+# Dominant selection for A:
+wf_sim(p = 1/250, fit_aa = .5)
+
+# Additive selection for A:
+wf_sim(p = 1/250, fit_Aa = .5, fit_aa = .25)
+```
+## wf_plot()
+
+A ggplot of overlaid Wright-Fisher simulations can be made using `wf_plot()`:
+
+```{r}
+wf_plot(num_sims = 100)
+```
+
+Takes same parameters as the `wf_sim()` function:
+
+```{r}
+wf_plot(p = 1/250, t = 25, fit_Aa = .5, fit_aa = .25) 
+```
+
+## wf_shiny()
+
+Currently not in this version, but there are plans for a shiny app.
+
