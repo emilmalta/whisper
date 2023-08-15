@@ -2,7 +2,7 @@ Package: whisper
 Title: What the Package Does (One Line, Title Case)
 Version: 0.0.0.9000
 Authors@R: 
-    person("Emil", "Malta", "Nikki", "emilmalta@icloud.com", role = c("aut", "cre"))
+    person("Emil", "Malta", , "emilmalta@icloud.com", role = c("aut", "cre"))
 Description: What the package does (one paragraph).
 License: MIT + file LICENSE
 Encoding: UTF-8
