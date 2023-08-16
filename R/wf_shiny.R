@@ -1,3 +1,15 @@
+#' Run interactive Wright-Fisher Genetic Drift Simulation
+#'
+#' @return Shiny app to interactively explore genetic drift simulations.
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' wf_shiny()
+#' }
+#'
+#' @seealso \code{\link{wf_plot}} for generating Wright-Fisher simulation plots.
+
 wf_shiny <- function() {
 
   ui <- bslib::page_sidebar(
