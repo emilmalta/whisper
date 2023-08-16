@@ -51,10 +51,8 @@ Selection assumes a diploid organism, and genotype fitness is provided for each:
 ```{r}
 # Dominant selection for A:
 wf_sim(p = 1/250, fit_aa = .5)
-
-# Additive selection for A:
-wf_sim(p = 1/250, fit_Aa = .5, fit_aa = .25)
 ```
+
 ## wf_plot()
 
 A ggplot of overlaid Wright-Fisher simulations can be made using `wf_plot()`:
@@ -71,5 +69,5 @@ wf_plot(p = 1/250, t = 25, fit_Aa = .5, fit_aa = .25)
 
 ## wf_shiny()
 
-Currently not in this version, but there are plans for a shiny app.
+Run `wf_shiny()` for an interactive app.
 
