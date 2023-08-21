@@ -12,6 +12,7 @@ Imports:
     bslib,
     dplyr,
     ggplot2,
+    patchwork,
     purrr,
     scales,
     shiny

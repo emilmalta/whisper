@@ -4,12 +4,15 @@
 \alias{wf_plot}
 \title{Plot Wright-Fisher Simulations}
 \usage{
-wf_plot(..., num_sims = 100)
+wf_plot(num_sims = 100L, show_hist = FALSE, ...)
 }
 \arguments{
-\item{...}{Parameters passed to \code{\link{wf_sim}} function.}
-
 \item{num_sims}{Number of simulations to run.}
+
+\item{show_hist}{Show distribution of allele frequencies at end of
+simulations.}
+
+\item{...}{Parameters passed to \code{\link{wf_sim}} function.}
 }
 \value{
 ggplot showing allele frequencies over generations.
