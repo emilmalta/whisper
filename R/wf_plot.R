@@ -23,7 +23,7 @@
 #' @importFrom dplyr tibble group_by mutate reframe
 #' @importFrom scales percent
 
-wf_plot <- function(num_sims = 100L, show_hist = FALSE, ...) {
+wf_plot <- function(..., num_sims = 100L, show_hist = FALSE) {
 
   if(num_sims < 1) stop("Invalid value of 'num_sims'")
 
@@ -32,8 +32,16 @@ wf_plot <- function(num_sims = 100L, show_hist = FALSE, ...) {
       tibble(sim = 1:num_sims), sim),
     p = wf_sim(...), t = seq_along(p)
   )
+
+  a <- seq_along(helper(...))
+  b <- helper(...)
+
   p1 <- ggplot2::ggplot(plot_df, ggplot2::aes(x = t, y = p, group = sim)) +
     ggplot2::geom_line(linewidth = .8, alpha = .5) +
+    geom_line(
+      data = tibble(a = a, b = b), aes(x = a, y = b, group = NULL),
+      linewidth = 1, color = "orange"
+    ) +
     ggplot2::scale_y_continuous(labels = scales::percent, limits = c(0, 1)) +
     ggplot2::labs(
       title = "Wright-Fisher simulation of genetic drift",
