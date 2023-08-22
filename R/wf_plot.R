@@ -58,10 +58,9 @@ wf_plot <- function(num_sims = 100L, show_hist = FALSE, ...) {
       panel.grid.minor.x = ggplot2::element_blank()
     )
 
-    print(p1 + p2 + patchwork::plot_layout(widths = c(.8, .2)))
-  } else {
-    print(p1)
+    return((p1 + p2) + patchwork::plot_layout(widths = c(.8, .2)))
   }
 
+  p1
 
 }
