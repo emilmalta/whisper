@@ -24,7 +24,7 @@ library(whisper)
 
 ## wf_sim()
 
-The `wf_sim` function produves a vector of allele frequencies using WF
+The `wf_sim` function produces a vector of allele frequencies using WF
 simulation. By default, population size is `250`, initial allele
 frequency is `0.5`, and `100` generations are produced.
 
